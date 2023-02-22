@@ -1,25 +1,11 @@
-// import React, { useEffect, useState } from 'react';
-// import { useNavigate, useLocation} from 'react-router-dom';
-
-// export const Candidate = (props) => {
-//     const navigate = useNavigate();
-
-// // Check for loading flag 
-// // if (loading) return <p>Loading...</p>
-
-// return (
-//   <div>
-//     <button onClick={() => navigate(-1)}>Go back</button>
-//     {/* content here */}
-//     Candidate
-//   </div>
-// );
-// }
 import React, { useCallback, useEffect, useState } from 'react';
 import { useNavigate, useLocation} from 'react-router-dom';
 import './Candidate.css';
-import DatePicker from "react-datepicker";
-
+// import DatePicker from "react-datepicker";
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import TextField from '@mui/material/TextField';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { getCandidateSlotsByDate } from './slotsAPI';
 
@@ -108,7 +94,19 @@ return (
 
       <div className='dateRow'>
       <span style={{width:"100%"}}>{"Select a Date"} </span> 
-      <DatePicker selected={startDate} onChange={(date) => onDateSelect(date) } />
+      {/* <DatePicker selected={startDate} onChange={(date) => onDateSelect(date) } /> */}
+      <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <DatePicker
+            disableFuture
+            label="Date"
+            openTo="year"
+            views={['year', 'month', 'day']}
+            value={startDate}
+            selected={startDate}
+            onChange={(date) => onDateSelect(date)}
+            renderInput={(params) => <TextField {...params} />}
+          />
+        </LocalizationProvider>
       </div>
       <span className=''>{"Choose a slot"} </span> 
       <div className='slotRow'>
