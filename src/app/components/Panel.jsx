@@ -10,6 +10,7 @@ import TextField from '@mui/material/TextField';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+import BasicDateTimePicker from '../common/Calendar';
 
 export const Panel = (props) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -93,40 +94,12 @@ return (
 
       <div className='dateRow'>
       <span style={{width:"100%"}}>{"Select a Date"} </span> 
-      {/* <DatePicker selected={startDate} onChange={(date) => onDateSelect(date) } /> */}
-      {/* <Calendar /> */}
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker
-            disableFuture
-            label="Date"
-            openTo="year"
-            views={['year', 'month', 'day']}
-            value={startDate}
-            selected={startDate}
-            onChange={(date) => onDateSelect(date)}
-            renderInput={(params) => <TextField {...params} />}
-          />
-        </LocalizationProvider>
+      <BasicDateTimePicker selectedDate ={startDate} onDateChange ={(date)=>onDateSelect(date)}></BasicDateTimePicker>
       </div>
       <span className=''>{"Choose slots"} </span> 
-      {/* <div className='slotRow'>
-        { slots.length > 0 &&
-        slots.map((item,index)=> <span className='slot' onClick={()=>onClickSlot(getFormattedTime(item))}>{getFormattedTime(item)} </span> 
-        )
-        }
-      </div> */}
       <MultipleSelectChip />
       <div className='slotDetailsContaainer'>
-<div className='selectedSlot'>
-<span>{"Selected Slot Details"}</span>
-<div className='slotLabel'>{"R2 interview - React"} </div> 
-<div  className='slotLabel' >
-  <span className='label'>{"60 min"}</span>
-  {/* <span className='label'>{startDate.toDateString()}</span> */}
-  <span className='label'>{selectedSlot}</span>
-  </div>
 
-</div>
 <div className='panelContainer'>
 <span>{"Panel Details"}</span>
 <div className='panelDetailContainer'>

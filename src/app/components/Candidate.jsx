@@ -8,9 +8,11 @@ import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import "react-datepicker/dist/react-datepicker.css";
 import { getCandidateSlotsByDate } from './slotsAPI';
+import BasicDateTimePicker from '../common/Calendar';
+import dayjs from 'dayjs';
 
 export const Candidate = (props) => {
-  const [startDate, setStartDate] = useState(new Date());
+  const [startDate, setStartDate] = useState(dayjs());
   const [slots, setSlots] = useState([]);
   const [selectedSlot, setSelectedSlot] = useState('');
   const [candidate, setCandidate] = useState({});
@@ -94,19 +96,9 @@ return (
 
       <div className='dateRow'>
       <span style={{width:"100%"}}>{"Select a Date"} </span> 
-      {/* <DatePicker selected={startDate} onChange={(date) => onDateSelect(date) } /> */}
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker
-            disableFuture
-            label="Date"
-            openTo="year"
-            views={['year', 'month', 'day']}
-            value={startDate}
-            selected={startDate}
-            onChange={(date) => onDateSelect(date)}
-            renderInput={(params) => <TextField {...params} />}
-          />
-        </LocalizationProvider>
+
+          <BasicDateTimePicker selectedDate ={startDate} onDateChange ={(date)=>onDateSelect(date)}></BasicDateTimePicker>
+
       </div>
       <span className=''>{"Choose a slot"} </span> 
       <div className='slotRow'>
@@ -121,7 +113,7 @@ return (
 <div className='slotLabel'>{"R1 interview - React"} </div> 
 <div  className='slotLabel' >
   <span className='label'>{"60 min"}</span>
-  {/* <span className='label'>{startDate.toDateString()}</span> */}
+  <span className='label'>{startDate.toString()}</span>
   <span className='label'>{selectedSlot}</span>
   </div>
 
