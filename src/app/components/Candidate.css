@@ -1,0 +1,78 @@
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    }
+  
+    .container {
+      width: 50%;
+      border: 1px solid gray;
+      margin: 25px 0px;
+  
+    }
+  
+    .title{
+      background-color: rgb(237, 233, 233);
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+    }
+  
+    .dateRow{
+      margin:10px 0px;
+      display: flex;
+      flex-direction: row; 
+      margin-bottom: 30px;   
+    }
+  
+    .slotRow{
+      margin:20px 0px;
+      display: flex;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  
+    .slot{
+      background-color: rgb(47, 44, 44);
+      color: white;
+      font-size: medium;
+      padding: 8px 5px;
+      margin: 10px;
+    }
+  
+    .slot:focus {     
+      background-color:yellow;    
+  }
+  
+    .inputField{
+      width: 80%;
+      padding: 8px;
+      margin-top: 10px;
+    }
+  
+    .cadidateDetailContainer{
+      margin:15px 0px
+    }
+  
+  
+  .selectedSlot{
+    margin-left: 9%;
+    margin-bottom: 20px;
+  }
+    
+  
+  .slotLabel{
+    display: flex;
+  }
+  
+  .slotDetailsContaainer{
+    margin-top: 40px;
+  }
+  
+  .submitButton{
+    margin-bottom: 30px;
+  
+  }
+  
+  .label{
+    margin-right: 8px;
+  }
