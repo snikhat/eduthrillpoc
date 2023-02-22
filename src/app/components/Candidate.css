@@ -33,17 +33,12 @@
     }
   
     .slot{
-      background-color: rgb(47, 44, 44);
       color: white;
       font-size: medium;
       padding: 8px 5px;
       margin: 10px;
     }
-  
-    .slot:focus {     
-      background-color:yellow;    
-  }
-  
+
     .inputField{
       width: 80%;
       padding: 8px;

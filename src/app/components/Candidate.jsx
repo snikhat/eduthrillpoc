@@ -14,7 +14,7 @@ import dayjs from 'dayjs';
 export const Candidate = (props) => {
   const [startDate, setStartDate] = useState(dayjs());
   const [slots, setSlots] = useState([]);
-  const [selectedSlot, setSelectedSlot] = useState('');
+  const [selectedSlot, setSelectedSlot] = useState(new Date());
   const [candidate, setCandidate] = useState({});
 
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ const getSlotsByDate = async()=>{
   try {
     let response = await fetch(getCandidateSlotsByDate(dateObj));
 
-  response =[new Date(), new Date(),new Date(),new Date()]
+  response =[new Date("2023-02-23"), new Date("2023-02-24"),new Date("2023-02-25"),new Date("2023-02-26")]
     if(!response) {
       throw new Error("Bad response")
     }
@@ -75,8 +75,8 @@ const onClickSubmit = async()=>{
   alert("TO DO Submit")
 }
 
-const onClickSlot = (slot)=>{
-  setSelectedSlot(slot)
+const onClickSlot = (date)=>{
+  setSelectedSlot(date)
 }
 
 const getFormattedTime = (dateTime)=>{
@@ -103,7 +103,7 @@ return (
       <span className=''>{"Choose a slot"} </span> 
       <div className='slotRow'>
         { slots.length > 0 &&
-        slots.map((item,index)=> <span className='slot' onClick={()=>onClickSlot(getFormattedTime(item))}>{getFormattedTime(item)} </span> 
+        slots.map((item,index)=> <span className='slot'  style={{backgroundColor: item === selectedSlot? '#92b9e0':'#202224' }} onClick={()=>onClickSlot(item)}>{getFormattedTime(item)} </span> 
         )
         }
       </div>
@@ -114,7 +114,7 @@ return (
 <div  className='slotLabel' >
   <span className='label'>{"60 min"}</span>
   <span className='label'>{startDate.toString()}</span>
-  <span className='label'>{selectedSlot}</span>
+  <span className='label'>{getFormattedTime(selectedSlot)}</span>
   </div>
 
 </div>
