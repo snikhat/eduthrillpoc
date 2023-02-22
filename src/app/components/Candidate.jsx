@@ -121,7 +121,7 @@ return (
 <div className='slotLabel'>{"R1 interview - React"} </div> 
 <div  className='slotLabel' >
   <span className='label'>{"60 min"}</span>
-  <span className='label'>{startDate.toDateString()}</span>
+  {/* <span className='label'>{startDate.toDateString()}</span> */}
   <span className='label'>{selectedSlot}</span>
   </div>
 
