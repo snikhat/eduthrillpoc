@@ -4,12 +4,6 @@ import { MultipleSelectChip } from './MultipleSelectChip';
 // import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { getPanelSlotsByDate } from './slotsAPI';
-import Calendar from '../common/Calendar';
-import dayjs, { Dayjs } from 'dayjs';
-import TextField from '@mui/material/TextField';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import BasicDateTimePicker from '../common/Calendar';
 
 export const Panel = (props) => {
@@ -17,7 +11,6 @@ export const Panel = (props) => {
   const [slots, setSlots] = useState([]);
   const [selectedSlot, setSelectedSlot] = useState('');
   const [panel, setPanel] = useState({});
-    const navigate = useNavigate();
 
     useEffect(()=>{
         loadPanel()
@@ -93,7 +86,7 @@ return (
       </div>
 
       <div className='dateRow'>
-      <span style={{width:"100%"}}>{"Select a Date"} </span> 
+      <span style={{marginRight:15}}>{"Select a Date"} </span> 
       <BasicDateTimePicker selectedDate ={startDate} onDateChange ={(date)=>onDateSelect(date)}></BasicDateTimePicker>
       </div>
       <span className=''>{"Choose slots"} </span> 

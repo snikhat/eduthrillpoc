@@ -21,7 +21,8 @@
       margin:10px 0px;
       display: flex;
       flex-direction: row; 
-      margin-bottom: 30px;   
+      margin-bottom: 30px;  
+      justify-content: center; 
     }
   
     .slotRow{

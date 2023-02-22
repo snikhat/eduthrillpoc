@@ -95,7 +95,7 @@ return (
       </div>
 
       <div className='dateRow'>
-      <span style={{width:"100%"}}>{"Select a Date"} </span> 
+      <span style={{marginRight: 15}}>{"Select a Date"} </span> 
 
           <BasicDateTimePicker selectedDate ={startDate} onDateChange ={(date)=>onDateSelect(date)}></BasicDateTimePicker>
 
