@@ -4,6 +4,12 @@ import { MultipleSelectChip } from './MultipleSelectChip';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { getPanelSlotsByDate } from './slotsAPI';
+import Calendar from '../common/Calendar';
+import dayjs, { Dayjs } from 'dayjs';
+import TextField from '@mui/material/TextField';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker';
 
 export const Panel = (props) => {
     const [startDate, setStartDate] = useState(new Date());
@@ -87,7 +93,8 @@ return (
 
       <div className='dateRow'>
       <span style={{width:"100%"}}>{"Select a Date"} </span> 
-      <DatePicker selected={startDate} onChange={(date) => onDateSelect(date) } />
+      {/* <DatePicker selected={startDate} onChange={(date) => onDateSelect(date) } /> */}
+      <Calendar onChangeDate={(date) => onDateSelect(date) }/>
       </div>
       <span className=''>{"Choose slots"} </span> 
       {/* <div className='slotRow'>
@@ -103,7 +110,7 @@ return (
 <div className='slotLabel'>{"R2 interview - React"} </div> 
 <div  className='slotLabel' >
   <span className='label'>{"60 min"}</span>
-  <span className='label'>{startDate.toDateString()}</span>
+  {/* <span className='label'>{startDate.toDateString()}</span> */}
   <span className='label'>{selectedSlot}</span>
   </div>
 
