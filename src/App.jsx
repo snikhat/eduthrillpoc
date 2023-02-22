@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import './App.css';
 import { Panel } from './app/components/Panel';
 import { Candidate } from './app/components/Candidate';
+import { Job } from './app/components/Job';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
           <Route exact path="/" element={<App/>}/>
           <Route path="/panel" element={<Panel />} />
           <Route path="/candidate" element={<Candidate />} />
+          <Route path="/job" element={<Job />} />
         </Routes>
     </div>
   );
