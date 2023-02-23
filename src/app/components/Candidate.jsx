@@ -14,7 +14,7 @@ import dayjs from 'dayjs';
 export const Candidate = (props) => {
   const [startDate, setStartDate] = useState(dayjs());
   const [slots, setSlots] = useState([]);
-  const [selectedSlot, setSelectedSlot] = useState(new Date());
+  const [selectedSlot, setSelectedSlot] = useState(dayjs());
   const [candidate, setCandidate] = useState({});
 
   const navigate = useNavigate();
@@ -55,7 +55,7 @@ const getSlotsByDate = async()=>{
   try {
     let response = await fetch(getCandidateSlotsByDate(dateObj));
 
-  response =[new Date("2023-02-23"), new Date("2023-02-24"),new Date("2023-02-25"),new Date("2023-02-26")]
+  response =[dayjs("2023-02-23"), dayjs("2023-02-24"),dayjs("2023-02-25"),dayjs("2023-02-26")]
     if(!response) {
       throw new Error("Bad response")
     }
@@ -81,7 +81,7 @@ const onClickSlot = (date)=>{
 
 const getFormattedTime = (dateTime)=>{
   const AMPM = dateTime.getHours() >= 12 ? " PM" : "AM";
-  const formattedTime = ("0" + dateTime.getHours()).slice(-2) + ":" + ("0" + dateTime.getMinutes()).slice(-2)+' '+AMPM;
+  const formattedTime = ("0" + dateTime.hour()).slice(-2) + ":" + ("0" + dateTime.minut()).slice(-2)+' '+AMPM;
   return formattedTime;
  }
 
