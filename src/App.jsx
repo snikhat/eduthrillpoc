@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-          <Route exact path="/" element={<App/>}/>
+          <Route exact path="/" element={() => <div><p>Root</p></div>}/>
           <Route path="/panel" element={<Panel />} />
           <Route path="/candidate" element={<Candidate />} />
           <Route path="/job" element={<Job />} />

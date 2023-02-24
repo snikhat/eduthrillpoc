@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "name": "Arnav Sharma",
+            "email": "arnav.sharma@accolitedigital.com",
+            "skills": ["javascript", "react", "react-native"]
+        },
+        {
+            "name": "Asheesh Tiwari",
+            "email": "asheesh.tiwari@accolitedigital.com",
+            "skills": ["javascript", "react", "react-native", "java", "kotlin"]
+        },
+        {
+            "name": "Pankaj Agarwal",
+            "email": "pankaj.aggarwal@accolitedigital.com",
+            "skills": ["javascript", "react", "react-native", "c#"]
+        },
+        {
+            "name": "Saista Nikhat",
+            "email": "saista.nikhat@accolitedigital.com",
+            "skills": ["javascript", "react", "react-native", "angular"]
+        },
+        {
+            "name": "Nikhil Bansal",
+            "email": "nikhil.bansal@accolitedigital.com",
+            "skills": ["javascript", "react", "react-native", ".NET"]
+        },
+        {
+            "name": "Aryan Sharma",
+            "email": "aryan.sharma@accolitedigital.com",
+            "skills": ["nodejs", "java", "crypto", "nft"]
+        }
+    ]
+}
